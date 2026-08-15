@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<!--
+    PORTFOLIO PESSOAL - ATIVIDADE PRATICA UNINTER
+    Autor: [Seu Nome]
+    Disciplina: Fundamentos da Programacao Web
+
+    Estrutura: Single Page com navegacao por ancoras
+    Secoes: Sobre mim, Formacao, Portfolio, Contato
+-->
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <!-- Viewport para responsividade em celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Lindanor Vilhena Cordeiro</title>
+    <!-- Link para o arquivo de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ============================================ -->
+    <!-- MENU DE NAVEGACAO FIXO NO TOPO               -->
+    <!-- Visivel em todas as secoes do site           -->
+    <!-- ============================================ -->
+    <header>
+        <nav class="menu">
+            <!-- Logo ou nome do site -->
+            <div class="logo">Portfólio pessoal (Currículo Online)</div>
+
+            <!-- Botao hamburguer para mobile (aparece em telas pequenas) -->
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">
+                &#9776;
+            </button>
+
+            <!-- Links de navegacao por ancora -->
+            <ul class="menu-links" id="menuLinks">
+                <li><a href="#sobre" onclick="fecharMenu()">Sobre mim</a></li>
+                <li><a href="#formacao" onclick="fecharMenu()">Formação</a></li>
+                <li><a href="#portfolio" onclick="fecharMenu()">Portfólio</a></li>
+                <li><a href="#contato" onclick="fecharMenu()">Contato</a></li>
+            </ul>
+
+            <!-- Botao para alternar entre tema claro e escuro -->
+            <button class="tema-btn" onclick="alternarTema()" aria-label="Alternar tema">
+                &#9788;
+            </button>
+        </nav>
+    </header>
+
+    <!-- ============================================ -->
+    <!-- SECAO 1: SOBRE MIM                           -->
+    <!-- Apresentacao pessoal, hobbies, foto          -->
+    <!-- ============================================ -->
+    <section id="sobre" class="secao sobre-mim">
+        <div class="container">
+            <h1></h1>
+            <div class="sobre-conteudo">
+                <!-- Foto pessoal -->
+                <img src="Imagens/lindanor.jpeg" alt="Foto de Lindanor" class="foto-perfil">
+
+                <!-- Texto de apresentacao -->
+                <div class="sobre-texto">
+                    <h2>Ola! Eu sou Lindanor Vilhena</h2>
+                    <p>
+                        Sou estudante de Sistemas de Informação na UNINTER, na modalidade EAD e atualmente atuo 
+                        como Assistente Administrativo na Assessoria de Desenvolvimento 
+                        Institucional -ADINS/SEED-AP.
+                    </p>
+                    <p>
+                       No meu dia a dia, uno a tecnologia à gestão de processos: além de estudar 
+                       programação e arquitetura de sistemas, gosto de criar meus próprios controles, 
+                       desenvolvendo tabelas auto-matizadas com Google Apps Script e fórmulas complexas
+                       para otimizar rotinas de trabalho.
+                    </p>
+                    <p>
+                        Nos momentos de lazer, gosto de jogar futebol e assistir a um filme, mas sou uma 
+                        pessoa extremamente família — entre sair com amigos ou ficar em casa, minha escolha
+                         sempre será estar com elas. Minhas filhas são meu combustível diário e a razão de 
+                         eu dar o meu melhor no trabalho, na faculdade e nos estudos.
+                    </p>
+                    <p>
+                        Sou uma responsável e dedicada a entregar sempre o meu melhor nas 
+                        ativi-dades do dia a dia.
+                    </p>
+                                        
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECAO 2: FORMATION                           -->
+    <!-- Cursos, idiomas, formacao educacional        -->
+    <!-- ============================================ -->
+    <section id="formacao" class="secao formacao">
+        <div class="container">
+            <h1></h1>
+
+            <!-- Card de formacao academica -->
+            
+            <div class="card">
+                <h3>🎓 Formacao Regular</h3>
+                <p><strong>Ensino Médio</strong></p>
+                <p>Escola Bosque do Amapá- MRB</p>
+                <p>Conclusão: 2008</p>
+                <br>
+                <h3>🎓 Formacao Academica</h3>
+                <p><strong>Bacharelado em Sistema de Informação</strong></p>
+                <p>UNINTER - Centro Universitario Internacional</p>
+                <p>Previsao de conclusão: 2028</p>
+            </div>
+
+            <!-- Card de cursos -->
+            <div class="card">
+                <h3>📚Cursos Complementares</h3>
+                <ul>
+                    <li>Informática Básica: Windows, Word, Excel, Powerpoint e Internet - Portal SOEDUCADOR</li>
+                    <li>Assistente Administrativo, Assistente de Contabilidade e Computação: Fundamentos e Google Drive - IFRS</li>
+                    <li>Formação Expert em IA, SQL, PYTHON, POWER BI, JavaScript e Excel - UNIFATEC/EMPOWERDATA DATA SOLUTIONS LTDA(DAXUS)</li>
+                    <li>CCNA: Introdução às Redes, Network Security e CyberOps Associate - SENAI-SC/CDI - Cisco Networking Academy</li>
+                    <li>#LATAMDigital_IOT, IA, Ciência_de_Dados, Cibersegurança e Segurança de endpoint - UNINTER/Cisco Networking Academy</li>
+                </ul>
+            </div>
+
+            <!-- Card de idiomas -->
+            <div class="card">
+                <h3>🌎 Idiomas</h3>
+                <ul>
+                    <li>Portugues - Nativo</li>
+                    <li>Ingles - Básico</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECAO 3: PORTFOLIO                           -->
+    <!-- Links para trabalhos ja realizados           -->
+    <!-- ============================================ -->
+    <section id="portfolio" class="secao portfolio">
+        <div class="container">
+            <h1>Portfolio</h1>
+            <p class="subtitulo">Alguns dos meus projetos e trabalhos:</p>
+
+            <div class="projetos">
+                <!-- Projeto 1 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="Imagens/ControlOrca.png" alt="Projeto Controle Orçamentário 2026 - ADINS/SEED">
+                    </div>
+                    <h3>Projeto Controle Orçamentário 2026 - ADINS/SEED</h3>
+                    <p>O Controle Orçamentário 2026 é um sistema computacional integrado  projetado para gerenciar e acompanhar a execução orçamentária da Assessoria de Desenvolvimento Institucional (ADINS) da Secretaria de Estado da Educação do Amapá (SEED/AP).
+                    <br>
+                    Desenvolvido sobre a plataforma Google Sheets com automações em Google Apps Script, HTML5, CSS3 e JavaScript, o ecossistema centraliza os dados orçamentários, automatiza rotinas operacionais e integra recursos avançados como formulários dinâmicos, relatórios em PDF e consumo de APIs externas (AwesomeAPI) para cotação de câmbio em tempo real.</p>
+                   
+                </div>
+
+                <!-- Projeto 2 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="Imagens/ContrlGTAE.png" alt="Projeto Controle de Atividades GTAE-SEED/AP">
+                    </div>
+                    <h3>Projeto Controle de Atividades GTAE-SEED/AP</h3>
+                    <p>O Controle GTAE 2026 é um ecossistema de software desenvolvido para automatizar e otimizar a gestão orçamentária, a análise documental e a habilitação de mais de 370 Unidades Executoras (Caixas Escolares) vinculadas ao Programa Escola Melhor (PROEM) da SEED/AP.
+                    <br>
+                    Sua arquitetura é construída sobre o ecossistema Google Workspace, utilizando o Google Sheets como banco de dados relacional e motor de cálculos avançados (com fórmulas como SOMASES, ÍNDICE/CORRESP e FILTER), combinado ao Google Apps Script no back-end para automação de rotinas, controle de acessos com criptografia/proteção de abas e geração em lote de documentos PDF integrados ao Google Drive.
+                    <br>
+                    Na camada de front-end, o sistema conta com interfaces modais customizadas em HTML5, CSS3 e JavaScript, além de uma aplicação WebApp responsiva que atua como um portal de autosserviço externo para emissão remota de cronogramas por gestores escolares.</p>
+                   
+                </div>
+
+                <!-- Projeto 3 -->
+                <div class="projeto-card">
+                    <div class="projeto-img">
+                        <img src="Imagens/diario.png" alt="Projeto Diário de Classe">
+                    </div>
+                    <h3>Projeto Diário de Classe</h3>
+                    <p>O Projeto “Diário de Classe” é uma ferramenta desenvolvida em Microsoft Excel para simplificar a rotina pedagógica dos professores na gestão escolar. Utilizando uma es-trutura intuitiva de fórmulas lógicas e de contagem (como SE, CONT.SE, SOMA e MÁ-XIMO), a planilha automatiza o apuramento de notas, o registro de frequência anual e a consolidação do status do aluno, otimizando o tempo docente e reduzindo falhas no cálculo de rendimento do estudante.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECAO 4: CONTATO                             -->
+    <!-- Formulario com validacao em JavaScript       -->
+    <!-- ============================================ -->
+    <section id="contato" class="secao contato">
+        <div class="container">
+            <h1>Contato</h1>
+            <p class="subtitulo">Entre em contato comigo!</p>
+
+            <!-- Formulario de contato -->
+            <!-- O atributo onsubmit chama a funcao validarFormulario() do JS -->
+            <!-- return false impede o envio real (simulacao) -->
+            <form id="formContato" onsubmit="return validarFormulario(event)">
+
+                <!-- Campo Nome -->
+                <div class="campo">
+                    <label for="nome">Nome completo:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
+                    <span class="erro" id="erroNome"></span>
+                </div>
+
+                <!-- Campo E-mail -->
+                <div class="campo">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@email.com">
+                    <span class="erro" id="erroEmail"></span>
+                </div>
+
+                <!-- Campo Mensagem -->
+                <div class="campo">
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem aqui..."></textarea>
+                    <span class="erro" id="erroMensagem"></span>
+                </div>
+
+                <!-- Botao de envio -->
+                <button type="submit" class="btn-enviar">Enviar Mensagem</button>
+            </form>
+
+            <!-- Informacoes de contato direto -->
+            <div class="contato-direto">
+                <p>Ou me encontre nas redes:</p>
+                <div class="redes-contato">
+                    <a href="https://wa.me/5596984197105" target="_blank" title="WhatsApp">
+                        <img src="Imagens/whatsapp.png" alt="WhatsApp">
+                    </a>
+                    <a href="https://github.com/lindanorvilhena-glitch" target="_blank" title="GitHub">
+                            <img src="Imagens/github.gif" alt="GitHub">
+                    </a>
+                    <a href="https://linkedin.com/in/lindanor-vilhena-cordeiro-30355a169" target="_blank" title="LinkedIn">
+                            <img src="Imagens/linkedin.png" alt="LinkedIn">
+                    </a>
+                    <a href="https://instagram.com/lindanorvilhena90" target="_blank" title="Instagram">
+                            <img src="Imagens/instagram.png" alt="Instagram">
+                    </a>
+                    <a href="https://facebook.com/lindanorvilhena" target="_blank" title="Facebook">
+                            <img src="Imagens/facebook.png" alt="Facebook">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- RODAPE                                       -->
+    <!-- ============================================ -->
+    <footer>
+        <p>&copy; 2026 Lindanor Vilhena Cordeiro. Todos os direitos reservados.</p>
+        <p>Desenvolvido para a disciplina de Fundamentos da Programacao Web - UNINTER</p>
+    </footer>
+
+    <!-- Link para o arquivo JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

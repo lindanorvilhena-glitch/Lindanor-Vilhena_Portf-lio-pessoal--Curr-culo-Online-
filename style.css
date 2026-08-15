@@ -1,0 +1,631 @@
+/* Reset: remove margens e paddings padrao do navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Variaveis CSS para cores do tema CLARO (padrao) */
+:root {
+    --cor-fundo: #f5f5f5;
+    --cor-texto: #333333;
+    --cor-primaria: #2c3e50;
+    --cor-secundaria: #3498db;
+    --cor-card: #ffffff;
+    --cor-menu: #2c3e50;
+    --cor-menu-texto: #ffffff;
+    --cor-borda: #dddddd;
+    --cor-erro: #e74c3c;
+    --cor-sucesso: #27ae60;
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Variaveis para o tema ESCURO */
+/* Quando a classe 'tema-escuro' e adicionada ao body */
+body.tema-escuro {
+    --cor-fundo: #1a1a2e;
+    --cor-texto: #e0e0e0;
+    --cor-primaria: #16213e;
+    --cor-secundaria: #0f3460;
+    --cor-card: #16213e;
+    --cor-menu: #0f3460;
+    --cor-menu-texto: #e0e0e0;
+    --cor-borda: #333333;
+    --sombra: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo base do body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Container centralizado com largura maxima */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ============================================ */
+/* MENU DE NAVEGACAO                            */
+/* Fixo no topo da pagina                       */
+/* ============================================ */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-menu);
+    box-shadow: var(--sombra);
+    z-index: 1000; /* Fica acima de todo o conteudo */
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+/* Logo do menu */
+.logo {
+    color: var(--cor-menu-texto);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+/* Lista de links do menu */
+.menu-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+/* Links do menu */
+.menu-links a {
+    color: var(--cor-menu-texto);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+/* Efeito hover nos links */
+.menu-links a:hover {
+    color: #3498db;
+}
+
+/* Botao de tema claro/escuro */
+.tema-btn {
+    background: none;
+    border: 2px solid var(--cor-menu-texto);
+    color: var(--cor-menu-texto);
+    padding: 5px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+}
+
+.tema-btn:hover {
+    background-color: var(--cor-menu-texto);
+    color: var(--cor-menu);
+}
+
+/* Botao hamburguer (aparece apenas no mobile) */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--cor-menu-texto);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+/* ============================================ */
+/* SECOES DO SITE                               */
+/* ============================================ */
+
+/* Estilo padrao para todas as secoes */
+.secao {
+    padding: 100px 20px 60px; /* padding-top maior por causa do menu fixo */
+    min-height: 100vh; /* Cada secao ocupa pelo menos a tela inteira */
+}
+
+/* Titulo principal de cada secao */
+.secao h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--cor-primaria);
+}
+
+/* Subtitulo */
+.subtitulo {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* ============================================ */
+/* SECAO SOBRE MIM                              */
+/* Com plano de fundo personalizado             */
+/* ============================================ */
+.sobre-mim {
+    /* ============================================ */
+    /* IMAGEM DE FUNDO - "PLANO DE FUNDO"           */
+    /* ============================================ */
+    /* A imagem deve estar na MESMA pasta que este  */
+    /* arquivo CSS. Renomeie a imagem para evitar   */
+    /* problemas com espaco no nome do arquivo.     */
+    /*                                              */
+    /* OPCAO 1: Se renomeou para "fundo.jpg":       */
+    /* background-image: url('fundo.jpg');          */
+    /*                                              */
+    /* OPCAO 2: Se manteve "Plano de fundo.jpg":    */
+    /* background-image: url('Plano%20de%20fundo.jpg'); */
+    /*                                              */
+    /* OPCAO 3: Se for PNG:                         */
+    /* background-image: url('fundo.png');          */
+    /* ============================================ */
+    background-image: url('Imagens/fundo2.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Efeito parallax */
+    background-repeat: no-repeat;
+    /* Cor de fallback caso a imagem nao carregue */
+    background-color: #1a1a2e;
+    /* Overlay escuro para melhorar legibilidade do texto */
+    position: relative;
+}
+
+/* Camada escura sobre a imagem de fundo */
+.sobre-mim::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay mais leve para a imagem aparecer */
+    z-index: 0;
+}
+
+/* Conteudo da secao sobre fica acima do overlay */
+.sobre-mim .container {
+    position: relative;
+    z-index: 1;
+}
+
+.sobre-mim h1 {
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra no texto para legibilidade */
+}
+
+/* Layout em duas colunas: foto + texto */
+.sobre-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Foto de perfil */
+.foto-perfil {
+    width: 250px;
+    height: 250px;
+    border-radius: 70%; /* Deixa a imagem redonda */
+    object-fit: cover;
+    border: 5px solid #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Area de texto */
+.sobre-texto {
+    max-width: 900px;
+    color: #ffffff;
+}
+
+.sobre-texto h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+.sobre-texto p {
+    margin-bottom: 15px;
+    font-size: 1.30rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    text-align: justify;
+}
+
+/* Icones de redes sociais */
+.redes-sociais {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.redes-sociais img {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    transition: transform 0.3s;
+    background-color: #ffffff; /* Fundo branco nos icones */
+    padding: 3px;
+}
+
+.redes-sociais img:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================ */
+/* SECAO FORMATION                              */
+/* ============================================ */
+.formacao {
+    background-color: var(--cor-fundo);
+}
+
+/* Cards de formacao */
+.card {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--sombra);
+    border-left: 5px solid var(--cor-secundaria);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateX(10px);
+}
+
+.card h3 {
+    color: var(--cor-primaria);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.card ul {
+    list-style-position: inside;
+    padding-left: 10px;
+}
+
+.card li {
+    margin-bottom: 8px;
+}
+
+/* ============================================ */
+/* SECAO PORTFOLIO                              */
+/* ============================================ */
+.portfolio {
+    background-color: var(--cor-fundo);
+}
+
+/* Grid de projetos */
+.projetos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Card de cada projeto */
+.projeto-card {
+    background-color: var(--cor-card);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--sombra);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: justify;
+    padding-bottom: 20px;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagem do projeto */
+.projeto-img {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    background-color: var(--cor-primaria);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projeto-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.projeto-card h3 {
+    margin: 15px 0 10px;
+    color: var(--cor-primaria);
+}
+
+.projeto-card p {
+    padding: 0 15px;
+    margin-bottom: 15px;
+}
+
+/* Botao de link do projeto */
+.btn-link {
+    display: inline-block;
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 25px;
+    transition: background-color 0.3s;
+}
+
+.btn-link:hover {
+    background-color: var(--cor-primaria);
+}
+
+/* ============================================ */
+/* SECAO CONTATO                                */
+/* ============================================ */
+.contato {
+    background-color: var(--cor-fundo);
+}
+
+/* Estilo do formulario */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--cor-card);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--sombra);
+}
+
+/* Cada campo do formulario */
+.campo {
+    margin-bottom: 20px;
+}
+
+.campo label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--cor-primaria);
+}
+
+/* Inputs e textarea */
+.campo input,
+.campo textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--cor-borda);
+    border-radius: 8px;
+    font-size: 1rem;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+    outline: none;
+    border-color: var(--cor-secundaria);
+}
+
+/* Mensagem de erro (inicialmente oculta) */
+.erro {
+    color: var(--cor-erro);
+    font-size: 0.9rem;
+    display: none;
+    margin-top: 5px;
+}
+
+/* Quando o erro esta ativo */
+.erro.ativo {
+    display: block;
+}
+
+/* Input com erro */
+.input-erro {
+    border-color: var(--cor-erro) !important;
+}
+
+/* Botao de enviar */
+.btn-enviar {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--cor-secundaria);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-enviar:hover {
+    background-color: var(--cor-primaria);
+}
+
+/* Area de contato direto (WhatsApp, Discord) */
+.contato-direto {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.redes-contato {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.redes-contato img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.redes-contato img:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================ */
+/* MODAL DE CONFIRMACAO                         */
+/* Caixa que aparece apos envio do formulario   */
+/* ============================================ */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.ativo {
+    display: flex;
+}
+
+.modal-conteudo {
+    background-color: var(--cor-card);
+    padding: 40px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-conteudo h2 {
+    color: var(--cor-sucesso);
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+}
+
+.modal-conteudo p {
+    margin-bottom: 25px;
+}
+
+.modal-conteudo button {
+    background-color: var(--cor-sucesso);
+    color: #ffffff;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.modal-conteudo button:hover {
+    background-color: #219a52;
+}
+
+/* ============================================ */
+/* RODAPE                                       */
+/* ============================================ */
+footer {
+    background-color: var(--cor-menu);
+    color: var(--cor-menu-texto);
+    text-align: center;
+    padding: 30px 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+}
+
+/* ============================================ */
+/* RESPONSIVIDADE - MOBILE                      */
+/* Ajustes para telas pequenas                  */
+/* ============================================ */
+@media (max-width: 768px) {
+    /* Mostra o botao hamburguer */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Esconde os links e os coloca em coluna */
+    .menu-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: var(--cor-menu);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
+        box-shadow: var(--sombra);
+    }
+
+    /* Classe que mostra o menu (adicionada via JS) */
+    .menu-links.ativo {
+        display: flex;
+    }
+
+    .menu-links a {
+        font-size: 1.2rem;
+    }
+
+    /* Ajusta a secao sobre mim */
+    .sobre-conteudo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .foto-perfil {
+        width: 180px;
+        height: 180px;
+    }
+
+    /* Reduz titulos */
+    .secao h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Ajusta o formulario */
+    form {
+        padding: 25px;
+    }
+
+    /* Grid de projetos em uma coluna */
+    .projetos {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajusta a imagem de fundo no mobile */
+    .sobre-mim {
+        background-attachment: scroll; /* Remove parallax no mobile para melhor performance */
+    }
+}
