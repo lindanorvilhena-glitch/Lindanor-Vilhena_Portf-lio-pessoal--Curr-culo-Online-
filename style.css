@@ -76,7 +76,7 @@ header {
 /* Logo do menu */
 .logo {
     color: var(--cor-menu-texto);
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: bold;
 }
 
@@ -92,12 +92,14 @@ header {
     color: var(--cor-menu-texto);
     text-decoration: none;
     font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.2rem;
     transition: color 0.3s;
 }
 
 /* Efeito hover nos links */
 .menu-links a:hover {
-    color: #3498db;
+    color: #15db33;
 }
 
 /* Botao de tema claro/escuro */
@@ -127,17 +129,17 @@ header {
     cursor: pointer;
 }
 
-/* ============================================ */
-/* SECOES DO SITE                               */
-/* ============================================ */
+/* =================================== */
+/*            SEÇÕES                   */
+/* =================================== */
 
-/* Estilo padrao para todas as secoes */
+/* Estilo padrao para todas as seções */
 .secao {
     padding: 100px 20px 60px; /* padding-top maior por causa do menu fixo */
     min-height: 100vh; /* Cada secao ocupa pelo menos a tela inteira */
 }
 
-/* Titulo principal de cada secao */
+/* Título principal de cada seção */
 .secao h1 {
     text-align: center;
     font-size: 2.5rem;
@@ -145,7 +147,7 @@ header {
     color: var(--cor-primaria);
 }
 
-/* Subtitulo */
+/* Subtítulo */
 .subtitulo {
     text-align: center;
     margin-bottom: 30px;
@@ -154,33 +156,18 @@ header {
 
 /* ============================================ */
 /* SECAO SOBRE MIM                              */
-/* Com plano de fundo personalizado             */
 /* ============================================ */
 .sobre-mim {
     /* ============================================ */
     /* IMAGEM DE FUNDO - "PLANO DE FUNDO"           */
     /* ============================================ */
-    /* A imagem deve estar na MESMA pasta que este  */
-    /* arquivo CSS. Renomeie a imagem para evitar   */
-    /* problemas com espaco no nome do arquivo.     */
-    /*                                              */
-    /* OPCAO 1: Se renomeou para "fundo.jpg":       */
-    /* background-image: url('fundo.jpg');          */
-    /*                                              */
-    /* OPCAO 2: Se manteve "Plano de fundo.jpg":    */
-    /* background-image: url('Plano%20de%20fundo.jpg'); */
-    /*                                              */
-    /* OPCAO 3: Se for PNG:                         */
-    /* background-image: url('fundo.png');          */
-    /* ============================================ */
+    
     background-image: url('Imagens/fundo2.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito parallax */
     background-repeat: no-repeat;
-    /* Cor de fallback caso a imagem nao carregue */
     background-color: #1a1a2e;
-    /* Overlay escuro para melhorar legibilidade do texto */
     position: relative;
 }
 
@@ -218,12 +205,13 @@ header {
 
 /* Foto de perfil */
 .foto-perfil {
-    width: 250px;
-    height: 250px;
-    border-radius: 70%; /* Deixa a imagem redonda */
-    object-fit: cover;
-    border: 5px solid #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+   width: 250px;
+   height: 300px;
+   border-radius: 30px;
+   object-fit: cover;
+   object-position: top center;
+   border: 5px solid #ffffff;
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5)
 }
 
 /* Area de texto */
@@ -281,6 +269,7 @@ header {
     box-shadow: var(--sombra);
     border-left: 5px solid var(--cor-secundaria);
     transition: transform 0.3s;
+    font-size: 1.10rem;
 }
 
 .card:hover {
@@ -569,6 +558,16 @@ footer p {
 /* RESPONSIVIDADE - MOBILE                      */
 /* Ajustes para telas pequenas                  */
 /* ============================================ */
+body.tema-escuro .secao h1,
+body.tema-escuro .card h3,
+body.tema-escuro .card p,
+body.tema-escuro .card li,
+body.tema-escuro .card strong,
+body.tema-escuro .projeto-card h3,
+body.tema-escuro .projeto-card p {
+    color: #ffffff;
+}
+
 @media (max-width: 768px) {
     /* Mostra o botao hamburguer */
     .menu-toggle {

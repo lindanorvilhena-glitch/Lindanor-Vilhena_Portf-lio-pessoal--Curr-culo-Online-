@@ -1,8 +1,3 @@
-/* ============================================ */
-/* JAVASCRIPT DO PORTFOLIO                      */
-/* Funcionalidades interativas do site          */
-/* ============================================ */
-
 /**
  * VALIDACAO DO FORMULARIO DE CONTATO
  * Verifica se todos os campos estao preenchidos
