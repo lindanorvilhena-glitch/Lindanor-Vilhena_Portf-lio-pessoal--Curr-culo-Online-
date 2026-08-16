@@ -1,24 +1,24 @@
 /**
- * VALIDACAO DO FORMULARIO DE CONTATO
+ * VALIDACÃO DO FORMULÁRIO DE CONTATO
  * Verifica se todos os campos estao preenchidos
  * e se o e-mail tem formato valido.
  * 
- * @param {Event} event - Evento de submit do formulario
- * @returns {boolean} - Retorna false para impedir envio real (simulacao)
+ * @param {Event} event - Evento de submit do formulário
+ * @returns {boolean} - Retorna false para impedir envio real (simulação)
  */
 function validarFormulario(event) {
-    // Impede o comportamento padrao de envio do formulario
+    // Impede o comportamento padrão de envio do formulário
     event.preventDefault();
 
-    // Obtem os valores dos campos e remove espacos em branco
+    // Obtem os valores dos campos e remove espaços em branco
     const nome = document.getElementById('nome').value.trim();
     const email = document.getElementById('email').value.trim();
     const mensagem = document.getElementById('mensagem').value.trim();
 
-    // Variavel para controlar se ha erros
+    // Variável para controlar se há erros
     let temErro = false;
 
-    // ---------- VALIDACAO DO NOME ----------
+    // ---------- VALIDAÇÃO DO NOME ----------
     if (nome === '') {
         mostrarErro('nome', 'erroNome', 'Por favor, preencha seu nome.');
         temErro = true;
@@ -29,9 +29,9 @@ function validarFormulario(event) {
         limparErro('nome', 'erroNome');
     }
 
-    // ---------- VALIDACAO DO E-MAIL ----------
-    // Expressao regular para validar formato de e-mail
-    // Exemplo valido: usuario@dominio.com
+    // ---------- VALIDAÇÃO DO E-MAIL ----------
+    // Expressão regular para validar formato de e-mail
+    // Exemplo válido: usuario@dominio.com
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === '') {
@@ -44,7 +44,7 @@ function validarFormulario(event) {
         limparErro('email', 'erroEmail');
     }
 
-    // ---------- VALIDACAO DA MENSAGEM ----------
+    // ---------- VALIDAÇÃO DA MENSAGEM ----------
     if (mensagem === '') {
         mostrarErro('mensagem', 'erroMensagem', 'Por favor, escreva uma mensagem.');
         temErro = true;
@@ -55,22 +55,21 @@ function validarFormulario(event) {
         limparErro('mensagem', 'erroMensagem');
     }
 
-    // ---------- SE NAO HOUVER ERROS, SIMULA O ENVIO ----------
+    // ---------- SE NÃO HOUVER ERROS, SIMULA O ENVIO ----------
     if (!temErro) {
-        // Limpa todos os campos do formulario
+        // Limpa todos os campos do formulário
         document.getElementById('formContato').reset();
 
         // Exibe mensagem de sucesso
         mostrarModalSucesso();
     }
 
-    // Retorna false para nao enviar o formulario de verdade
+    // Retorna false para nao enviar o formulário de verdade
     return false;
 }
 
 /**
  * MOSTRAR ERRO EM UM CAMPO
- * Adiciona classe de erro ao input e mostra a mensagem.
  * 
  * @param {string} inputId - ID do input com erro
  * @param {string} erroId - ID do span de erro
@@ -112,10 +111,10 @@ function limparErro(inputId, erroId) {
  * Cria e exibe uma caixa modal informando que a mensagem foi enviada.
  */
 function mostrarModalSucesso() {
-    // Verifica se o modal ja existe na pagina
+    // Verifica se o modal ja existe na página
     let modal = document.getElementById('modalSucesso');
 
-    // Se nao existir, cria o modal dinamicamente
+    // Se não existir, cria o modal dinamicamente
     if (!modal) {
         modal = document.createElement('div');
         modal.id = 'modalSucesso';
@@ -161,7 +160,7 @@ document.addEventListener('click', function(event) {
 });
 
 /**
- * MENU RESPONSIVO (HAMBURGUER)
+ * MENU RESPONSIVO
  * Abre ou fecha o menu em telas pequenas.
  */
 function toggleMenu() {
@@ -182,9 +181,8 @@ function fecharMenu() {
 }
 
 /**
- * TEMA CLARO / ESCURO
  * Alterna entre os temas claro e escuro do site.
- * Salva a preferencia no localStorage para lembrar na proxima visita.
+ * Salva a preferência no localStorage para lembrar na proxima visita.
  */
 function alternarTema() {
     const body = document.body;
@@ -196,7 +194,7 @@ function alternarTema() {
     // Verifica qual tema esta ativo
     const temaEscuroAtivo = body.classList.contains('tema-escuro');
 
-    // Muda o icone do botao
+    // Muda o ícone do botão
     if (temaEscuroAtivo) {
         botao.innerHTML = '&#9790;'; // Lua (tema escuro)
         botao.setAttribute('aria-label', 'Mudar para tema claro');
@@ -205,14 +203,13 @@ function alternarTema() {
         botao.setAttribute('aria-label', 'Mudar para tema escuro');
     }
 
-    // Salva a preferencia no localStorage
+    // Salva a preferência no localStorage
     localStorage.setItem('temaEscuro', temaEscuroAtivo);
 }
 
 /**
  * CARREGAR TEMA SALVO
- * Ao carregar a pagina, verifica se o usuario tinha
- * escolhido o tema escuro anteriormente.
+ * Ao carregar a página, verifica se o usuário tinha
  */
 function carregarTemaSalvo() {
     const temaEscuroSalvo = localStorage.getItem('temaEscuro');
@@ -224,7 +221,7 @@ function carregarTemaSalvo() {
     }
 }
 
-// Executa a funcao quando a pagina termina de carregar
+// Executa a função quando a página termina de carregar
 window.addEventListener('DOMContentLoaded', carregarTemaSalvo);
 
 /**

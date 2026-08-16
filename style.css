@@ -1,11 +1,11 @@
-/* Reset: remove margens e paddings padrao do navegador */
+/* Reset: remove margens e paddings padrão do navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Variaveis CSS para cores do tema CLARO (padrao) */
+/* Variáveis CSS para cores do tema CLARO */
 :root {
     --cor-fundo: #f5f5f5;
     --cor-texto: #333333;
@@ -20,7 +20,7 @@
     --sombra: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Variaveis para o tema ESCURO */
+/* Variáveis para o tema ESCURO */
 /* Quando a classe 'tema-escuro' e adicionada ao body */
 body.tema-escuro {
     --cor-fundo: #1a1a2e;
@@ -43,7 +43,7 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Container centralizado com largura maxima */
+/* Container centralizado com largura máxima */
 .container {
     max-width: 1100px;
     margin: 0 auto;
@@ -51,8 +51,8 @@ body {
 }
 
 /* ============================================ */
-/* MENU DE NAVEGACAO                            */
-/* Fixo no topo da pagina                       */
+/* MENU DE NAVEGAÇÃO                            */
+/* Fixo no topo da página                       */
 /* ============================================ */
 header {
     position: fixed;
@@ -61,7 +61,7 @@ header {
     width: 100%;
     background-color: var(--cor-menu);
     box-shadow: var(--sombra);
-    z-index: 1000; /* Fica acima de todo o conteudo */
+    z-index: 1000; 
 }
 
 .menu {
@@ -102,7 +102,7 @@ header {
     color: #15db33;
 }
 
-/* Botao de tema claro/escuro */
+/* Botão de tema claro/escuro */
 .tema-btn {
     background: none;
     border: 2px solid var(--cor-menu-texto);
@@ -119,7 +119,7 @@ header {
     color: var(--cor-menu);
 }
 
-/* Botao hamburguer (aparece apenas no mobile) */
+/* Botão hamburguer (aparece apenas no mobile) */
 .menu-toggle {
     display: none;
     background: none;
@@ -133,7 +133,7 @@ header {
 /*            SEÇÕES                   */
 /* =================================== */
 
-/* Estilo padrao para todas as seções */
+/* Estilo padrão para todas as seções */
 .secao {
     padding: 100px 20px 60px; /* padding-top maior por causa do menu fixo */
     min-height: 100vh; /* Cada secao ocupa pelo menos a tela inteira */
@@ -155,14 +155,11 @@ header {
 }
 
 /* ============================================ */
-/* SECAO SOBRE MIM                              */
+/* SEÇÃO SOBRE MIM                              */
 /* ============================================ */
 .sobre-mim {
-    /* ============================================ */
-    /* IMAGEM DE FUNDO - "PLANO DE FUNDO"           */
-    /* ============================================ */
-    
-    background-image: url('Imagens/fundo2.png');
+      
+    background-image: url('Imagens/fundo2.png'); /* IMAGEM DE FUNDO - "PLANO DE FUNDO"           */
     background-size: cover;
     background-position: center;
     background-attachment: fixed; /* Efeito parallax */
@@ -183,7 +180,7 @@ header {
     z-index: 0;
 }
 
-/* Conteudo da secao sobre fica acima do overlay */
+/* Conteúdo da seção sobre fica acima do overlay */
 .sobre-mim .container {
     position: relative;
     z-index: 1;
@@ -214,7 +211,7 @@ header {
    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5)
 }
 
-/* Area de texto */
+/* Área de texto */
 .sobre-texto {
     max-width: 900px;
     color: #ffffff;
@@ -233,7 +230,7 @@ header {
     text-align: justify;
 }
 
-/* Icones de redes sociais */
+/* Ícones de redes sociais */
 .redes-sociais {
     display: flex;
     gap: 15px;
@@ -254,13 +251,13 @@ header {
 }
 
 /* ============================================ */
-/* SECAO FORMATION                              */
+/* SEÇÃO FORMAÇÃO                               */
 /* ============================================ */
 .formacao {
     background-color: var(--cor-fundo);
 }
 
-/* Cards de formacao */
+/* Cards de formação */
 .card {
     background-color: var(--cor-card);
     border-radius: 10px;
@@ -292,7 +289,7 @@ header {
 }
 
 /* ============================================ */
-/* SECAO PORTFOLIO                              */
+/* SEÇÃO PORTFÓLIO                              */
 /* ============================================ */
 .portfolio {
     background-color: var(--cor-fundo);
@@ -348,7 +345,7 @@ header {
     margin-bottom: 15px;
 }
 
-/* Botao de link do projeto */
+/* Botão de link do projeto */
 .btn-link {
     display: inline-block;
     background-color: var(--cor-secundaria);
@@ -364,13 +361,13 @@ header {
 }
 
 /* ============================================ */
-/* SECAO CONTATO                                */
+/* SEÇÃO CONTATO                                */
 /* ============================================ */
 .contato {
     background-color: var(--cor-fundo);
 }
 
-/* Estilo do formulario */
+/* Estilo do formulário */
 form {
     max-width: 600px;
     margin: 0 auto;
@@ -380,7 +377,7 @@ form {
     box-shadow: var(--sombra);
 }
 
-/* Cada campo do formulario */
+/* Cada campo do formulário */
 .campo {
     margin-bottom: 20px;
 }
@@ -430,7 +427,7 @@ form {
     border-color: var(--cor-erro) !important;
 }
 
-/* Botao de enviar */
+/* Botão de enviar */
 .btn-enviar {
     width: 100%;
     padding: 15px;
@@ -448,7 +445,7 @@ form {
     background-color: var(--cor-primaria);
 }
 
-/* Area de contato direto (WhatsApp, Discord) */
+/* Área de contato direto (WhatsApp, Facebook, Instragram, Git e Linkedln) */
 .contato-direto {
     text-align: center;
     margin-top: 40px;
@@ -473,8 +470,8 @@ form {
 }
 
 /* ============================================ */
-/* MODAL DE CONFIRMACAO                         */
-/* Caixa que aparece apos envio do formulario   */
+/* MODAL DE CONFIRMAÇÃO                         */
+/* Caixa que aparece após envio do formulário   */
 /* ============================================ */
 .modal {
     display: none;
@@ -540,7 +537,7 @@ form {
 }
 
 /* ============================================ */
-/* RODAPE                                       */
+/* RODAPÉ                                       */
 /* ============================================ */
 footer {
     background-color: var(--cor-menu);
@@ -556,7 +553,6 @@ footer p {
 
 /* ============================================ */
 /* RESPONSIVIDADE - MOBILE                      */
-/* Ajustes para telas pequenas                  */
 /* ============================================ */
 body.tema-escuro .secao h1,
 body.tema-escuro .card h3,
@@ -569,7 +565,7 @@ body.tema-escuro .projeto-card p {
 }
 
 @media (max-width: 768px) {
-    /* Mostra o botao hamburguer */
+    /* Mostra o botão hamburguer */
     .menu-toggle {
         display: block;
     }
@@ -597,7 +593,7 @@ body.tema-escuro .projeto-card p {
         font-size: 1.2rem;
     }
 
-    /* Ajusta a secao sobre mim */
+    /* Ajusta a seção sobre mim */
     .sobre-conteudo {
         flex-direction: column;
         text-align: center;
@@ -608,12 +604,12 @@ body.tema-escuro .projeto-card p {
         height: 180px;
     }
 
-    /* Reduz titulos */
+    /* Reduz títulos */
     .secao h1 {
         font-size: 1.8rem;
     }
 
-    /* Ajusta o formulario */
+    /* Ajusta o formulário */
     form {
         padding: 25px;
     }
