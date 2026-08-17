@@ -217,7 +217,7 @@ header {
     color: #ffffff;
 }
 
-.sobre-texto h2 {
+.sobre-texto h1 {
     font-size: 2rem;
     margin-bottom: 15px;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
@@ -275,7 +275,6 @@ header {
 
 .card h3 {
     color: var(--cor-primaria);
-    margin-bottom: 15px;
     font-size: 1.3rem;
 }
 
@@ -336,7 +335,8 @@ header {
 }
 
 .projeto-card h3 {
-    margin: 15px 0 10px;
+    margin: 20px 0 10px;
+    margin-bottom: 15px;
     color: var(--cor-primaria);
 }
 
