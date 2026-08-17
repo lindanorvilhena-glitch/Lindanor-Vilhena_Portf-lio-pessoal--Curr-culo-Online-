@@ -180,6 +180,44 @@ header {
     z-index: 0;
 }
 
+/* Container da galeria visual no Sobre Mim */
+.sobre-galeria {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 35px;
+    width: 100%;
+}
+
+.galeria-item {
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.galeria-item:hover {
+    transform: translateY(-3px);
+}
+
+.galeria-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+.legenda-imagem {
+    display: block;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    color: #e0e0e0;
+    font-style: italic;
+}
+
 /* Conteúdo da seção sobre fica acima do overlay */
 .sobre-mim .container {
     position: relative;
