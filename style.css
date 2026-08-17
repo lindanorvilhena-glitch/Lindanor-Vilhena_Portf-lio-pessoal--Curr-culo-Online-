@@ -345,6 +345,16 @@ header {
     margin-bottom: 15px;
 }
 
+.projeto-card ul {
+    margin-top: 10px;
+    margin-left: 35px;
+    text-align: left;
+}
+
+.projeto-card li {
+    margin-bottom: 5px;
+}
+
 /* Botão de link do projeto */
 .btn-link {
     display: inline-block;
