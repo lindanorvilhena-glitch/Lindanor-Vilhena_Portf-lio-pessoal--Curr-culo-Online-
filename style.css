@@ -309,6 +309,7 @@ header {
     box-shadow: var(--sombra);
     transition: transform 0.3s, box-shadow 0.3s;
     text-align: justify;
+    padding: 0 15px;
     padding-bottom: 20px;
 }
 
@@ -336,12 +337,15 @@ header {
 
 .projeto-card h3 {
     margin: 20px 0 10px;
-    margin-bottom: 15px;
     color: var(--cor-primaria);
 }
 
+.projeto-card h4{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
 .projeto-card p {
-    padding: 0 15px;
     margin-bottom: 15px;
 }
 
