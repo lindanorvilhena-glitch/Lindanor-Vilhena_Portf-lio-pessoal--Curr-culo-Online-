@@ -345,15 +345,22 @@ header {
     margin-bottom: 15px;
 }
 
-.projeto-card ul {
+.tecnologias {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 10px;
-    margin-left: 35px;
-    text-align: left;
+    list-style: none;
 }
 
-.projeto-card li {
-    margin-bottom: 5px;
+.tecnologias li {
+    background: #258cf3;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
 }
+
 
 /* Botão de link do projeto */
 .btn-link {
