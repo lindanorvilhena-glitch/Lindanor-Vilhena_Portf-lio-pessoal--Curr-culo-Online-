@@ -51,8 +51,7 @@ body {
 }
 
 /* ============================================ */
-/* MENU DE NAVEGAÇÃO                            */
-/* Fixo no topo da página                       */
+/* ------------MENU DE NAVEGAÇÃO--------------- */
 /* ============================================ */
 header {
     position: fixed;
@@ -130,7 +129,7 @@ header {
 }
 
 /* =================================== */
-/*            SEÇÕES                   */
+/*-------------SEÇÕES----------------- */
 /* =================================== */
 
 /* Estilo padrão para todas as seções */
@@ -155,7 +154,7 @@ header {
 }
 
 /* ============================================ */
-/* SEÇÃO SOBRE MIM                              */
+/* --------------SEÇÃO SOBRE MIM--------------- */
 /* ============================================ */
 .sobre-mim {
       
@@ -289,7 +288,7 @@ header {
 }
 
 /* ============================================ */
-/* SEÇÃO FORMAÇÃO                               */
+/* ´------------SEÇÃO FORMAÇÃO----------------- */
 /* ============================================ */
 .formacao {
     background-color: var(--cor-fundo);
@@ -326,17 +325,27 @@ header {
 }
 
 /* ============================================ */
-/* SEÇÃO PORTFÓLIO                              */
+/* -------------SEÇÃO PORTFÓLIO---------------- */
 /* ============================================ */
-.portfolio {
-    background-color: var(--cor-fundo);
-}
-
-/* Grid de projetos */
 .projetos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
     gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Cards da primeira linha (menores) */
+.projeto-card:nth-child(1),
+.projeto-card:nth-child(2) {
+    transform: scale(0.95);
+}
+
+/* Cards da segunda linha (maiores) */
+.projeto-card:nth-child(3),
+.projeto-card:nth-child(4) {
+    transform: scale(1.02);
 }
 
 /* Card de cada projeto */
@@ -349,10 +358,12 @@ header {
     text-align: justify;
     padding: 0 15px;
     padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .projeto-card:hover {
-    transform: translateY(-5px);
+    transform: scale(1) !important;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
@@ -365,12 +376,21 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
+    margin-left: -15px;
+    margin-right: -15px;
+    width: calc(100% + 30px);
 }
 
 .projeto-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.projeto-img.galeria:hover img {
+    transform: scale(1.05);
 }
 
 .projeto-card h3 {
@@ -378,13 +398,14 @@ header {
     color: var(--cor-primaria);
 }
 
-.projeto-card h4{
+.projeto-card h4 {
     margin-top: 15px;
     margin-bottom: 10px;
 }
 
 .projeto-card p {
     margin-bottom: 15px;
+    flex-grow: 1;
 }
 
 .tecnologias {
@@ -393,6 +414,7 @@ header {
     gap: 8px;
     margin-top: 10px;
     list-style: none;
+    padding: 0;
 }
 
 .tecnologias li {
@@ -403,7 +425,6 @@ header {
     font-size: 0.9rem;
 }
 
-
 /* Botão de link do projeto */
 .btn-link {
     display: inline-block;
@@ -413,6 +434,8 @@ header {
     padding: 10px 25px;
     border-radius: 25px;
     transition: background-color 0.3s;
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .btn-link:hover {
@@ -504,29 +527,6 @@ form {
     background-color: var(--cor-primaria);
 }
 
-/* Área de contato direto (WhatsApp, Facebook, Instragram, Git e Linkedln) */
-.contato-direto {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.redes-contato {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 15px;
-}
-
-.redes-contato img {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
-    transition: transform 0.3s;
-}
-
-.redes-contato img:hover {
-    transform: scale(1.1);
-}
 
 /* ============================================ */
 /* MODAL DE CONFIRMAÇÃO                         */
