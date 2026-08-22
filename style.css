@@ -443,7 +443,7 @@ header {
 }
 
 /* ============================================ */
-/* SEÇÃO CONTATO                                */
+/* -----------SEÇÃO CONTATO-------------------- */
 /* ============================================ */
 .contato {
     background-color: var(--cor-fundo);
@@ -527,10 +527,8 @@ form {
     background-color: var(--cor-primaria);
 }
 
-
 /* ============================================ */
-/* MODAL DE CONFIRMAÇÃO                         */
-/* Caixa que aparece após envio do formulário   */
+/* -----------MODAL DE CONFIRMAÇÃO------------- */
 /* ============================================ */
 .modal {
     display: none;
@@ -596,7 +594,7 @@ form {
 }
 
 /* ============================================ */
-/* RODAPÉ                                       */
+/* ---------------RODAPÉ----------------------- */
 /* ============================================ */
 footer {
     background-color: var(--cor-menu);
@@ -611,7 +609,7 @@ footer p {
 }
 
 /* ============================================ */
-/* RESPONSIVIDADE - MOBILE                      */
+/* ---------RESPONSIVIDADE - MOBILE------------ */
 /* ============================================ */
 body.tema-escuro .secao h1,
 body.tema-escuro .card h3,

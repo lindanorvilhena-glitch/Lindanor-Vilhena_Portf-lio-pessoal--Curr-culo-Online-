@@ -1,7 +1,5 @@
 /**
  * VALIDACÃO DO FORMULÁRIO DE CONTATO
- * Verifica se todos os campos estao preenchidos
- * e se o e-mail tem formato valido.
  * 
  * @param {Event} event - Evento de submit do formulário
  * @returns {boolean} - Retorna false para impedir envio real (simulação)
@@ -31,7 +29,6 @@ function validarFormulario(event) {
 
     // ---------- VALIDAÇÃO DO E-MAIL ----------
     // Expressão regular para validar formato de e-mail
-    // Exemplo válido: usuario@dominio.com
     const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (email === '') {
@@ -182,7 +179,6 @@ function fecharMenu() {
 
 /**
  * Alterna entre os temas claro e escuro do site.
- * Salva a preferência no localStorage para lembrar na proxima visita.
  */
 function alternarTema() {
     const body = document.body;
@@ -224,10 +220,8 @@ function carregarTemaSalvo() {
 // Executa a função quando a página termina de carregar
 window.addEventListener('DOMContentLoaded', carregarTemaSalvo);
 
-/**
+/*
  * FECHAR MENU AO REDIMENSIONAR A TELA
- * Se a tela for redimensionada para desktop,
- * garante que o menu esteja visivel.
  */
 window.addEventListener('resize', function() {
     const menuLinks = document.getElementById('menuLinks');
